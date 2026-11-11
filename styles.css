@@ -1,20 +1,19 @@
 /* ==========================================================================
-   RIOAZA MULTISERVICIOS - ULTRA CORPORATIVO (styles.css)
+   RIOAZA MULTISERVICIOS - ULTRA CORPORATIVO MINIMALISTA (styles.css)
    ========================================================================== */
 
-/* --- 1. VARIABLES GLOBALES Y RESET --- */
+/* --- 1. VARIABLES DE COLOR ULTRA CORPORATIVO (LUMINOSO) --- */
 :root {
-  --color-primary: #0A192F;      /* Azul marino ultra corporativo */
-  --color-secondary: #0F172A;    /* Pizarra profundo */
-  --color-accent: #F97316;       /* Naranja industrial de acción */
-  --color-brand-green: #84CC16;  /* Verde institucional Rioaza */
-  --color-text-main: #1E293B;    /* Texto principal de alta legibilidad */
-  --color-muted: #64748B;        /* Texto secundario / gris corporativo */
-  --color-border: #E2E8F0;       /* Bordes ultra finos */
-  --color-bg-light: #F8FAFC;     /* Fondo suave alterno */
-  --color-white: #FFFFFF;
-  --font-heading: 'Fustat', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --color-brand-primary: #0F172A;   /* Azul marino corporativo profundo */
+  --color-brand-accent: #0284C7;    /* Azul cerúleo ejecutivo */
+  --color-brand-green: #16A34A;     /* Verde esmeralda institucional */
+  --color-bg-body: #FFFFFF;         /* Blanco puro de fondo */
+  --color-bg-subtle: #F8FAFC;       /* Gris marfil muy claro */
+  --color-text-main: #0F172A;       /* Texto oscuro de alta nitidez */
+  --color-text-muted: #64748B;      /* Texto secundario corporativo */
+  --color-border: #E2E8F0;          /* Líneas divisorias ultrafinas */
+  --color-border-hover: #CBD5E1;
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -24,18 +23,16 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-family-base);
   color: var(--color-text-main);
-  background-color: var(--color-white);
+  background-color: var(--color-bg-body);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 button {
@@ -50,399 +47,418 @@ input, select, textarea {
   outline: none;
 }
 
-.fustat { font-family: var(--font-heading); }
-.schib { font-family: 'Schibsted Grotesk', 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; }
-
 /* --- 2. CONTENEDORES Y BOTONES --- */
-.container {
-  max-width: 1240px;
+.site-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
-.section-py {
-  padding: 88px 0;
+.section-spacing {
+  padding: 104px 0;
 }
 
-.btn-primary {
+.btn-corporate-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--color-accent);
-  color: #ffffff !important;
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF !important;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 15px;
   padding: 12px 24px;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.2);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  border-radius: 8px;
+  border: 1px solid var(--color-brand-primary);
+  transition: all 0.2s ease;
 }
 
-.btn-primary:hover {
-  opacity: 0.95;
-  transform: translateY(-1px);
+.btn-corporate-primary:hover {
+  background-color: #1E293B;
+  border-color: #1E293B;
 }
 
-.btn-primary:disabled {
-  opacity: 0.65;
+.btn-corporate-primary:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
-  transform: none;
 }
 
-/* --- 3. NAVEGACIÓN --- */
-.nav-header {
+/* --- 3. NAVEGACIÓN MINIMALISTA --- */
+.site-nav {
   position: sticky;
   top: 0;
-  z-index: 50;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
 
-.nav-container {
-  max-width: 1320px;
+.nav-inner {
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 16px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-brand {
+.brand-wrapper {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.nav-logo-img {
-  height: 42px;
+.brand-logo-img {
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
-.nav-brand-title {
-  font-size: 20px;
+.brand-text-title {
+  font-size: 19px;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: var(--color-primary);
+  color: var(--color-brand-primary);
   line-height: 1;
 }
 
-.nav-brand-sub {
+.brand-text-sub {
   font-size: 9px;
-  color: var(--color-muted);
-  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
   margin-top: 3px;
 }
 
-.nav-links-desktop {
+.nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
-.nav-link-item {
+.nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: #334155;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
 }
 
-.nav-link-item:hover {
-  color: var(--color-primary);
+.nav-link:hover {
+  color: var(--color-brand-primary);
 }
 
 .hamburger-btn {
   display: none;
   padding: 8px;
-  color: var(--color-primary);
+  color: var(--color-brand-primary);
 }
 
 .mobile-menu-drawer {
   display: none;
   flex-direction: column;
   gap: 16px;
-  padding: 20px 24px;
-  background: #ffffff;
-  border-top: 1px solid var(--color-border);
+  padding: 24px 32px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mobile-menu-drawer.is-open {
   display: flex;
 }
 
-/* --- 4. HERO ULTRA CORPORATIVO --- */
-.hero-section {
-  position: relative;
-  background: var(--color-primary);
-  color: #ffffff;
-  overflow: hidden;
+/* --- 4. HERO ULTRA CORPORATIVO (FONDO CLARO) --- */
+.hero-corporate {
+  background: var(--color-bg-body);
+  border-bottom: 1px solid var(--color-border);
+  padding: 96px 0 104px;
 }
 
-.hero-container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 110px 24px 90px;
+.hero-grid {
   display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
   align-items: center;
 }
 
-.hero-badge-location {
+.hero-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 9999px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
   padding: 6px 14px;
+  border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: var(--color-brand-green);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.hero-title {
-  margin: 24px 0 0;
+.hero-badge-tag span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-brand-green);
+}
+
+.hero-headline {
+  margin: 20px 0 16px;
+  font-size: 52px;
   font-weight: 800;
-  font-size: 58px;
-  line-height: 1.08;
-  letter-spacing: -1.8px;
+  line-height: 1.12;
+  letter-spacing: -1.6px;
+  color: var(--color-brand-primary);
 }
 
-.hero-title span {
-  color: var(--color-brand-green);
-}
-
-.hero-subtitle {
-  margin: 22px 0 0;
-  max-width: 520px;
-  font-size: 17px;
+.hero-description {
+  font-size: 18px;
+  color: var(--color-text-muted);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.hero-media-wrapper {
-  position: relative;
-  width: 100%;
   max-width: 520px;
-  margin: 0 auto;
+}
+
+.hero-stats-row {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 40px;
 }
 
-/* Animación sutil de espera en los placeholders */
-@keyframes pulsePlaceholder {
-  0%, 100% {
-    opacity: 1;
-    border-color: rgba(148, 163, 184, 0.3);
-  }
-  50% {
-    opacity: 0.85;
-    border-color: rgba(132, 204, 22, 0.5);
-  }
+.stat-item-number {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
 }
 
-.hero-image-placeholder {
+.stat-item-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Placeholder luminoso 4:3 */
+.hero-image-container {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, rgba(10, 25, 47, 0.95) 100%);
-  border: 2px dashed rgba(148, 163, 184, 0.3);
-  border-radius: 20px;
+  background: var(--color-bg-subtle);
+  border: 1px dashed var(--color-border-hover);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 28px;
+  padding: 24px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-  animation: pulsePlaceholder 4s ease-in-out infinite;
 }
 
-.hero-image-placeholder svg {
-  color: var(--color-brand-green);
+.hero-image-container svg {
+  color: var(--color-text-muted);
 }
 
-/* --- 5. CINTILLO DE MARCAS --- */
-.brands-strip {
-  background: #ffffff;
-  padding: 36px 24px;
-  border-top: 1px solid var(--color-border);
+/* --- 5. CINTILLO DE MARCAS DISTRIBUIDAS --- */
+.brands-section {
+  padding: 36px 0;
+  background: var(--color-bg-subtle);
   border-bottom: 1px solid var(--color-border);
   text-align: center;
 }
 
-.brands-flex {
-  margin-top: 18px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 36px;
-  filter: grayscale(1);
-  opacity: 0.65;
+.brands-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
-/* --- 6. SOLUCIONES CORPORATIVAS (3 PILARES) --- */
-.solutions-grid {
+.brands-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  opacity: 0.65;
+  filter: grayscale(100%);
+}
+
+.brand-text-logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--color-brand-primary);
+}
+
+/* --- 6. TARJETAS DE SOLUCIONES (3 PILARES) --- */
+.cards-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
   margin-top: 48px;
 }
 
-.card-solution {
-  background: #ffffff;
+.corp-card {
+  background: #FFFFFF;
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border-radius: 10px;
+  padding: 36px 28px;
+  transition: all 0.2s ease;
 }
 
-.card-solution:hover {
-  border-color: #CBD5E1;
+.corp-card:hover {
+  border-color: var(--color-brand-primary);
   transform: translateY(-2px);
 }
 
+.corp-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  margin-bottom: 12px;
+}
+
+.corp-card-text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.corp-card-list {
+  list-style: none;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-text-main);
+}
+
 /* --- 7. BASE DE SUMINISTRO (UBICACIÓN ESTRATÉGICA) --- */
-.location-panel {
-  background: var(--color-secondary);
-  color: #ffffff;
-  border-radius: 20px;
+.location-card-layout {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
   padding: 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
   margin-top: 40px;
 }
 
-.location-placeholder {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: #020617;
-  border: 2px dashed rgba(148, 163, 184, 0.3);
-  border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #94A3B8;
-  gap: 10px;
-  text-align: center;
-  padding: 20px;
-}
-
-/* --- 8. LÍNEAS DE SUMINISTRO FRECUENTE (3 COLUMNAS SIMÉTRICAS) --- */
-.supply-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 44px;
-}
-
-.supply-card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
-}
-
-.supply-img-wrap {
-  aspect-ratio: 4 / 3;
-  background: #F1F5F9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-muted);
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.supply-body {
-  padding: 24px;
-}
-
-/* --- 9. FORMULARIO DE CONTACTO Y RETROALIMENTACIÓN --- */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.form-card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.06);
-  padding: 40px;
-}
-
-.form-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.location-detail-list {
+  list-style: none;
   margin-top: 24px;
-}
-
-.form-label {
-  display: block;
-}
-
-.form-label span {
-  display: block;
-  font-size: 13px;
-  font-weight: 500;
-  color: #334155;
-  margin-bottom: 6px;
-}
-
-.form-input {
-  width: 100%;
-  height: 48px;
-  padding: 0 14px;
-  border: 1px solid #CBD5E1;
-  border-radius: 10px;
+  display: grid;
+  gap: 12px;
   font-size: 14px;
-  color: var(--color-text-main);
-  background: #ffffff;
+}
+
+.location-detail-list strong {
+  color: var(--color-brand-primary);
+}
+
+/* --- 8. LÍNEAS DE SUMINISTRO FRECUENTE --- */
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
   transition: border-color 0.2s ease;
 }
 
-.form-input:focus {
-  border-color: var(--color-primary);
+.product-card:hover {
+  border-color: var(--color-brand-primary);
 }
 
-.turnstile-wrapper {
-  min-height: 65px;
-  margin: 18px 0 8px;
-}
-
-.form-notice {
+.product-thumb-placeholder {
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 13px;
-  color: var(--color-muted);
-  margin-top: 12px;
-  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-text-muted);
 }
 
-.form-feedback {
+.product-content {
+  padding: 24px;
+}
+
+/* --- 9. FORMULARIO DE COTIZACIÓN FORMAL --- */
+.form-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.form-field {
+  display: block;
+}
+
+.form-field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brand-primary);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text-main);
+  background: #FFFFFF;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--color-brand-primary);
+}
+
+.form-commercial-notice {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.turnstile-box {
+  min-height: 65px;
+  margin: 20px 0 8px;
+}
+
+/* Notificaciones visuales de respuesta */
+.form-feedback-banner {
   display: none;
   margin-top: 16px;
   padding: 14px 18px;
-  border-radius: 10px;
-  font-size: 14px;
-  line-height: 1.5;
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 500;
 }
 
-.form-feedback.is-success {
+.form-feedback-banner.is-success {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -451,7 +467,7 @@ input, select, textarea {
   color: #166534;
 }
 
-.form-feedback.is-warning {
+.form-feedback-banner.is-warning {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -460,7 +476,7 @@ input, select, textarea {
   color: #9A3412;
 }
 
-.form-feedback.is-error {
+.form-feedback-banner.is-error {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -469,38 +485,33 @@ input, select, textarea {
   color: #991B1B;
 }
 
-.form-feedback svg {
+.form-feedback-banner svg {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
-/* --- 10. FOOTER --- */
+/* --- 10. PIE DE PÁGINA --- */
 .site-footer {
-  background: #020617;
-  color: #94A3B8;
-  padding: 56px 24px 32px;
-  border-top: 1px solid #1E293B;
+  background: var(--color-bg-subtle);
+  border-top: 1px solid var(--color-border);
+  padding: 48px 0 32px;
+  font-size: 13px;
+  color: var(--color-text-muted);
 }
 
-/* --- 11. REGLAS RESPONSIVAS CENTRALIZADAS (MEDIA QUERIES) --- */
+/* --- 11. REGLAS RESPONSIVAS (MEDIA QUERIES) --- */
 @media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    padding: 80px 24px 60px;
-  }
-  .hero-title { font-size: 46px; }
-  .solutions-grid { grid-template-columns: 1fr; }
-  .supply-grid-3 { grid-template-columns: 1fr; }
-  .location-panel { grid-template-columns: 1fr; padding: 32px; }
-  .contact-layout { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cards-grid-3 { grid-template-columns: 1fr; }
+  .location-card-layout { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .nav-links-desktop, .nav-cta-wrapper { display: none; }
+  .nav-links, .nav-cta-box { display: none; }
   .hamburger-btn { display: inline-flex; }
-  .hero-title { font-size: 34px; letter-spacing: -1px; }
-  .hero-media-wrapper { display: none; } /* Oculta placeholder en móviles */
-  .form-grid-2 { grid-template-columns: 1fr; }
-  .section-py { padding: 60px 0; }
+  .hero-headline { font-size: 36px; letter-spacing: -1px; }
+  .hero-image-container { display: none; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .hero-stats-row { flex-direction: column; gap: 20px; }
 }
